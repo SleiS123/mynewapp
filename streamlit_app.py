@@ -1,3 +1,26 @@
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import chardet
+
+# Define the path to your data file
+data_path = "C:/Users/17742/OneDrive/Desktop/NYU/2023 Fall/study/global_education_data.csv"
+
+# Read data and detect encoding
+with open(data_path, 'rb') as f:
+    result = chardet.detect(f.read())
+
+file_encoding = result['encoding']
+df = pd.read_csv(data_path, encoding=file_encoding)
+
+# Rest of the code remains the same...
+
+# Read data and detect encoding
+with open(data_path, 'rb') as f:
+    result = chardet.detect(f.read())
+
+file_encoding = result['encoding']
+df = pd.read_csv(data_path, encoding=file_encoding)
 
 # Streamlit application
 st.title("Global Education Data Analysis")
